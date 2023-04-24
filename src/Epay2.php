@@ -2,7 +2,7 @@
 
 namespace Relesssar\Epay2;
 
-class MakePay
+class Epay2
 {
     public function hello(): string
     {
