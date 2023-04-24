@@ -1,0 +1,12 @@
+{
+    "name": "relesssar/epay2",
+    "version": "1.0",
+    "type": "library",
+    "license": "MIT",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Relesssar\\Epay2\\":"src/"
+        }
+    }
+}
