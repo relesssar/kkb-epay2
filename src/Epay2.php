@@ -46,7 +46,7 @@ class Epay2
                 return null;
             }
         } else {
-            return 'error 200'.$result;
+            return 'error 200';
         }
         curl_close($ch);
     }
@@ -86,6 +86,23 @@ class Epay2
         $token = $this->getToken_regular();
 
         $url = '/operation/'.$transaction_id.'/charge';
+
+        if ($this->isTest == 1) {
+            $host = 'https://testepay.homebank.kz/api';
+        } else {
+            $host = 'https://epay-api.homebank.kz';
+        }
+        $host = $host . $url;
+
+        $result = $this->request($host,$token,$amount);
+
+        return $result;
+    }
+
+    public function cancel($transaction_id,$amount = null) {
+        $token = $this->getToken_regular();
+
+        $url = '/operation/'.$transaction_id.'/cancel';
 
         if ($this->isTest == 1) {
             $host = 'https://testepay.homebank.kz/api';
