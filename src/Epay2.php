@@ -10,6 +10,8 @@ class Epay2
     protected $clientID = '';
     protected $clientSecret = '';
     protected $token = '';
+    protected $epayapi_prod = 'https://epay-api.homebank.kz';
+    protected $epayapi_test = 'https://testepay.homebank.kz/api';
 
 
     public function __construct($IsTest = 0, $Host,$TerminalID,$ClientID,$ClientSecret)
@@ -88,9 +90,9 @@ class Epay2
         $url = '/operation/'.$transaction_id.'/charge';
 
         if ($this->isTest == 1) {
-            $host = 'https://testepay.homebank.kz/api';
+            $host = $this->epayapi_test;
         } else {
-            $host = 'https://epay-api.homebank.kz';
+            $host = $this->epayapi_prod;
         }
         $host = $host . $url;
 
@@ -105,9 +107,9 @@ class Epay2
         $url = '/operation/'.$transaction_id.'/cancel';
 
         if ($this->isTest == 1) {
-            $host = 'https://testepay.homebank.kz/api';
+            $host = $this->epayapi_test;
         } else {
-            $host = 'https://epay-api.homebank.kz';
+            $host = $this->epayapi_prod;
         }
         $host = $host . $url;
 
@@ -123,9 +125,9 @@ class Epay2
         $url = '/operation/'.$transaction_id.'/refund';
 
         if ($this->isTest == 1) {
-            $host = 'https://testepay.homebank.kz/api';
+            $host = $this->epayapi_test;
         } else {
-            $host = 'https://epay-api.homebank.kz';
+            $host = $this->epayapi_prod;
         }
         $host = $host . $url;
 
