@@ -1,7 +1,7 @@
 # PHP Library for epay v2 epay.homebank.kz
 
 ### Install
-`composer require relesssar/esedo`
+`composer require relesssar/epay2`
 
 # Documentation
 https://epayment.kz/docs
